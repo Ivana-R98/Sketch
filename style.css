@@ -35,8 +35,8 @@ h1 {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    margin: 1em 1.5em;
-    width: 100px;
+    margin: 1em 1.3em;
+    width: 115px;
     font-family: 'Courgette', cursive;
     transition: transform .3s;
   }

@@ -61,6 +61,15 @@ function create () {
     }
 }
 
+//rainbow button
+let rainbow = document.getElementById("rainbow").
+    addEventListener("click", () => {
+    const randomR = Math.floor(Math.random() * 256)
+    const randomG = Math.floor(Math.random() * 256)
+    const randomB = Math.floor(Math.random() * 256)
+    color = `rgb(${randomR}, ${randomG}, ${randomB})`
+    })
+
 //delete the color, eraser
 let eraser = document.getElementById("eraser").
     addEventListener("click", () => {
