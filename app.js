@@ -27,6 +27,16 @@ range.addEventListener('input', () => {
     clearCurrentGrid();
     create();
 }) 
+range.addEventListener('touchend', () => {
+    rangeSelect = range.value;
+    display.innerText = rangeSelect;
+    gridSize = rangeSelect;
+    row = +gridSize;
+    col = +gridSize;
+    grid = row*col;
+    clearCurrentGrid();
+    create();
+});
 
 // clear the current grid
 function clearCurrentGrid () {
