@@ -37,12 +37,6 @@ range.addEventListener('input', () => {
     clearCurrentGrid();
     create();
 });
-range.addEventListener('touchstart', () => {
-    touchRangechange();
-});
-range.addEventListener('touchmove', () => {
-    touchRangechange();
-});
 
 // clear the current grid
 function clearCurrentGrid () {
@@ -59,36 +53,21 @@ function create () {
         container.appendChild(div);
 
         // add event listeners to change colors 
-        if(container.offsetWidth > 300) {
-            div.addEventListener("mousedown", () => {
+        div.addEventListener("mousedown", () => {
+            changeColor(div);
+            mouseDown = true;
+        })
+        div.addEventListener("mouseup", () => {
+            mouseDown = false;
+        })
+        div.addEventListener("mouseenter", () => {
+            if(mouseDown) {
                 changeColor(div);
-                mouseDown = true;
-            })
-            div.addEventListener("mouseup", () => {
-                mouseDown = false;
-            })
-            div.addEventListener("mouseenter", () => {
-                if(mouseDown) {
-                    changeColor(div);
-                }
-            })
-        }
-        else {
-            div.addEventListener("touchstart", () => {
-                changeColor(div);
-                mouseDown = true;
-            });
-            div.addEventListener("touchend", () => {
-                mouseDown = false;
-            });
-            div.addEventListener("touchmove", () => {
-                if(mouseDown) {
-                    changeColor(div);
-                }
-            })
-        }
+            }
+        })
     }
 }
+
 
 //rainbow button
 let rainbow = document.getElementById("rainbow").
