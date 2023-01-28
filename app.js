@@ -93,7 +93,6 @@ function changeColor(div) {
 }
 
 
-
 let reload = document.querySelector("#reset").
     addEventListener("click", () => {
         location.reload();
