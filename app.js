@@ -27,7 +27,7 @@ range.addEventListener('input', () => {
     clearCurrentGrid();
     create();
 }) 
-range.addEventListener('touchend', () => {
+range.addEventListener('touchmove', () => {
     rangeSelect = range.value;
     display.innerText = rangeSelect;
     gridSize = rangeSelect;
