@@ -12,6 +12,7 @@ h1 {
     margin: 0;
     padding: 0;
     padding-top: 0.5em;
+    text-align: center;
 }
 .container {
     background-color: white;
@@ -20,28 +21,40 @@ h1 {
     width: 680px;
     height: 720px;
     display: grid;
+    user-select: none;
 }
-
-.btngrp {
+.grp {
   display: flex;
 }
-
+.btngrp {
+  display: flex;
+  justify-content: center;
+}
+.gridgrp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* button effects */
-.dropbtn, .buttons {
+.buttons {
     background-color: #457ee9;
     color: white;
-    padding: 16px 0px;
+    padding: 12px 0px;
     font-size: 16px;
     border: none;
     cursor: pointer;
     margin: 1em 1.3em;
     width: 115px;
+    height: 50px;
     font-family: 'Courgette', cursive;
     transition: transform .3s;
   }
+#colorpicker {
+  padding: 6px;
+}
   
-  .dropbtn:hover, .dropbtn:focus , .buttons:hover {
+.buttons:hover {
     background-color: #425ae6;
     transform: scale(1.2);
   }
@@ -72,6 +85,49 @@ h1 {
   .color:hover {
       background-color: #dadada;
   }
-  
-  
+   
   .show {display: block;}
+
+  /* mediaquery */
+@media screen and (max-width: 840px) {
+  .btngrp {
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+  }
+  .buttons {
+    padding: 6px 0;
+    font-size: 14px;
+    margin: 0.5em 1em;
+    width: 70px;
+    height: 50px;
+  }
+  .container {
+    width: 380px;
+    height: 420px;
+    border:1em #457ee9 solid;
+  }
+}
+@media screen and (max-width: 425px) {
+  h1 {
+    font-size: 1.3rem;
+    margin: 1rem;
+  }
+  label, .buttons {
+    font-size: 0.8rem;
+  }
+  .buttons {
+    height: 35px;
+    width: 60px;
+  }
+  .btngrp {
+    gap: 0.3rem;
+  }
+  #gridDisplay {
+    margin: auto;
+  }
+  .container {
+    width: 240px;
+    height: 380px;
+  }
+}

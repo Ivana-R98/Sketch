@@ -14,37 +14,16 @@
 <body>
     <h1>Etch-a-Sketch project</h1>
         <div class="btngrp">
-            <button class="buttons" id="gridSelect">Grid</button>
-            <div class="dropdown">
-                <button onclick="drop()" class="dropbtn">Colors</button>
-                <div id="dropdown" class="dropdown-content">
-                <div class="color">Black</div>
-                <div class="color">Blue</div>
-                <div class="color">Cyan</div>
-                <div class="color">Turquoise</div>
-                <div class="color">Skyblue</div>
-                <div class="color">Aquamarine</div>
-                <div class="color">Purple</div>
-                <div class="color">Orchid</div>
-                <div class="color">Fuchsia</div>
-                <div class="color">Lavender</div>
-                <div class="color">Pink</div>
-                <div class="color">Plum</div>
-                <div class="color">Hotpink</div>
-                <div class="color">Magenta</div>
-                <div class="color">Violet</div>
-                <div class="color">Red</div>
-                <div class="color">Crimson</div>
-                <div class="color">Orange</div>
-                <div class="color">Gold</div>
-                <div class="color">Beige</div>
-                <div class="color">Yellow</div>
-                <div class="color">Lime</div>
-                <div class="color">Green</div> 
-                <div class="color">Brown</div>
+            <div class="gridgrp">
+                <label for="gridrange">Grid (between 16 and 100)</label>
+                <div class="grp">
+                    <input type="range" id="gridrange" name="gridrange" 
+                        value="16" min="16" max="100">
+                    <p id="gridDisplay">16</p>
                 </div>
             </div>
-            <button class="buttons" id="rainbow">Random Color</button>
+            <input type="color" class="buttons dropbtn" name="colorpicker" id="colorpicker">
+            <button class="buttons" id="rainbow">Rainbow</button>
             <button class="buttons" id="eraser">Eraser</button>
             <button class="buttons" id="reset">Refresh</button>
         </div>
