@@ -17,6 +17,16 @@ colorpicker.addEventListener("input", () => {
 let display = document.getElementById("gridDisplay");
 let rangeSelect = 16;
 let range = document.getElementById("gridrange");
+function touchRangechange () {
+    rangeSelect = range.value;
+    display.innerText = rangeSelect;
+    gridSize = rangeSelect;
+    row = +gridSize;
+    col = +gridSize;
+    grid = row*col;
+    clearCurrentGrid();
+    create();
+}
 range.addEventListener('input', () => {
     rangeSelect = range.value;
     display.innerText = rangeSelect;
@@ -26,16 +36,12 @@ range.addEventListener('input', () => {
     grid = row*col;
     clearCurrentGrid();
     create();
-}) 
+});
+range.addEventListener('touchstart', () => {
+    touchRangechange();
+});
 range.addEventListener('touchmove', () => {
-    rangeSelect = range.value;
-    display.innerText = rangeSelect;
-    gridSize = rangeSelect;
-    row = +gridSize;
-    col = +gridSize;
-    grid = row*col;
-    clearCurrentGrid();
-    create();
+    touchRangechange();
 });
 
 // clear the current grid
