@@ -28,8 +28,6 @@ range.addEventListener('input', () => {
     create();
 }) 
 
-
-
 // clear the current grid
 function clearCurrentGrid () {
     container.innerHTML = '';
@@ -44,19 +42,35 @@ function create () {
         let div = document.createElement("div"); 
         container.appendChild(div);
 
-        // add event listeners to change colors  
-        div.addEventListener("mousedown", () => {
-            changeColor(div);
-            mouseDown = true;
-        })
-        div.addEventListener("mouseup", () => {
-            mouseDown = false;
-        })
-        div.addEventListener("mouseenter", () => {
-            if(mouseDown) {
+        // add event listeners to change colors 
+        if(container.offsetWidth > 300) {
+            div.addEventListener("mousedown", () => {
                 changeColor(div);
-            }
-        })
+                mouseDown = true;
+            })
+            div.addEventListener("mouseup", () => {
+                mouseDown = false;
+            })
+            div.addEventListener("mouseenter", () => {
+                if(mouseDown) {
+                    changeColor(div);
+                }
+            })
+        }
+        else {
+            div.addEventListener("touchstart", () => {
+                changeColor(div);
+                mouseDown = true;
+            });
+            div.addEventListener("touchend", () => {
+                mouseDown = false;
+            });
+            div.addEventListener("touchmove", () => {
+                if(mouseDown) {
+                    changeColor(div);
+                }
+            })
+        }
     }
 }
 
